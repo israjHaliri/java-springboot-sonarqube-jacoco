@@ -1,0 +1,16 @@
+#change to 3.5 if need to naming network container
+version: '3.3'
+services:
+  sonarqube:
+    container_name: sonarqube
+    image: sonarqube:6.7.1
+    environment:
+    - SONARQUBE_JDBC_USERNAME=sonar
+    - SONARQUBE_JDBC_PASSWORD=sonar
+    ports:
+    - "9092:9000"
+    networks:
+    - my-network
+
+networks:
+  my-network: {}
